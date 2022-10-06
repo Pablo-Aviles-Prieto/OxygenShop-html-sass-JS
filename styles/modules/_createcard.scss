@@ -1,0 +1,97 @@
+@use 'variables';
+@use 'createcircle';
+
+@mixin item(
+  $circleColor,
+  $circlePosition,
+  $imgHeight: 100%,
+  $circleWidthHeight: 64px,
+  $circleRadius: calc($circleWidthHeight / 2)
+) {
+  background-color: variables.$color-white;
+  margin-top: 42px;
+  border: 1px solid variables.$color-grey-light;
+  border-radius: 5px;
+  .container-benefits-card-content {
+    width: 85%;
+    margin: 25px auto;
+    .container-benefits-card-content-header-img {
+      position: relative;
+      height: 165px;
+      img {
+        position: absolute;
+        z-index: 1;
+        margin: auto;
+        object-fit: contain;
+        height: $imgHeight;
+        width: 100%;
+      }
+      .container-benefits-card-content-header-img-circle {
+        @include createcircle.createCircle(
+          $circleColor,
+          $circleWidthHeight,
+          $circleRadius
+        );
+        position: absolute;
+        top: 0;
+        right: $circlePosition;
+      }
+    }
+    .container-benefits-card-content-title {
+      margin: 15px auto;
+      margin-bottom: 30px;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 35px;
+    }
+    .container-benefits-card-content-info {
+      font-family: 'Open Sans';
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+}
+
+@mixin itemDesktop($borderColor) {
+  height: 370px;
+  .container-benefits-card-content {
+    .container-benefits-card-content-header {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      .container-benefits-card-content-header-img {
+        width: 1070px;
+        height: 300px;
+        .container-benefits-card-content-header-img-circle {
+          right: calc(50% - 142px);
+          top: calc(50% - 136px);
+          border-radius: 37px;
+          transform: rotate(-45deg);
+        }
+      }
+      .container-benefits-card-content-header-title-info {
+        .container-benefits-card-content-title {
+          width: 16rem;
+          margin: 15px 0;
+        }
+        @include borderBottomSmaller($borderColor);
+      }
+    }
+  }
+}
+
+@mixin borderBottomSmaller($borderColor) {
+  .container-benefits-card-content-info {
+    position: relative;
+    padding-bottom: 2rem;
+    width: 70%;
+  }
+  .container-benefits-card-content-info::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 3px solid $borderColor;
+    width: 70%;
+  }
+}

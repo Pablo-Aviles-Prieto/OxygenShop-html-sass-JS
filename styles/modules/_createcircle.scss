@@ -1,0 +1,13 @@
+@use 'variables';
+
+@mixin createCircle(
+  $color: variables.$color-pinky-red,
+  $circleWidthHeight: 64px,
+  $circleRadius: 32px
+) {
+  margin: auto;
+  width: $circleWidthHeight;
+  height: $circleWidthHeight;
+  border-radius: $circleRadius;
+  background-color: $color;
+}
