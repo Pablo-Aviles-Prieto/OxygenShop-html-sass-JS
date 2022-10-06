@@ -9,7 +9,7 @@ class Slider {
 
   sliderInterval() {
     this.timeoutSlider = setInterval(() => {
-      +this.imgDisplayedId !== 4
+      +this.imgDisplayedId !== this.totalImgsCount
         ? this.cleanSelectCircleClasses(+this.imgDisplayedId + 1)
         : this.cleanSelectCircleClasses(1);
     }, 2000);
@@ -69,7 +69,7 @@ class Slider {
   };
   changeRightHandler = () => {
     this.resetInterval();
-    +this.imgDisplayedId !== 4
+    +this.imgDisplayedId !== this.totalImgsCount
       ? this.cleanSelectCircleClasses(+this.imgDisplayedId + 1)
       : this.cleanSelectCircleClasses(1);
   };
