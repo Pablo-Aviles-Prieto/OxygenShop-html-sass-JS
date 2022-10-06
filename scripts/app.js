@@ -26,10 +26,10 @@ const modalFormElement = document.querySelector('.newsletter-form');
 const leftSliderArrowElement = document.querySelector('#left-arrow');
 const rightSliderArrowElement = document.querySelector('#right-arrow');
 
+let popupAlreadyShowed = false;
 let returnToTopTimer;
 let popupTimer;
 let currentPercentageScrolled = 0;
-let popupAlreadyShowed = false;
 let modalState = 'close';
 let currentCurrency = 'usd';
 
