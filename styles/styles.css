@@ -212,15 +212,25 @@ body {
   cursor: pointer;
   margin-bottom: 51px;
   background-color: #08a6e4;
-  box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
-  border: 0px;
+  box-shadow: 0px 0px 0px 0px white;
+  border: 2px transparent;
   border-radius: 40px;
   width: 310px;
   height: 67px;
+  transition: background-color 0.4s ease-in-out, border 0.4s ease-in, box-shadow 0.6s ease-out;
+}
+.container-open-shop button:hover {
+  border: 1px solid #08a6e4;
+  box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
+  background-color: #fff;
+}
+.container-open-shop button:hover p {
+  color: #08a6e4;
 }
 .container-open-shop button p {
   text-decoration: none;
   color: #fff;
+  transition: color 0.4s ease-out;
 }
 
 .container-image {
@@ -714,6 +724,9 @@ body {
   background-color: #a5a5a5;
   border-radius: 0.5rem;
 }
+.container-slider .container-slider-circle div:hover {
+  background-color: #fff;
+}
 .container-slider .container-slider-circle div.circle-selected {
   background-color: #fff;
 }
@@ -725,6 +738,9 @@ body {
   top: calc(50% - 1.6rem);
   left: 1rem;
 }
+.container-slider #left-arrow:hover {
+  color: #fff;
+}
 .container-slider #right-arrow {
   cursor: pointer;
   width: 3.2rem;
@@ -732,6 +748,9 @@ body {
   position: absolute;
   top: calc(50% - 1.6rem);
   right: 1rem;
+}
+.container-slider #right-arrow:hover {
+  color: #fff;
 }
 
 .container-contact {
@@ -905,13 +924,23 @@ body {
   width: 14rem;
   height: 3.5rem;
   background-color: #08a6e4;
-  border: 0px;
+  border: 2px transparent;
   border-radius: 40px;
+  box-shadow: 0px 0px 0px 0px white;
+  transition: background-color 0.4s ease-in-out, border 0.4s ease-in, box-shadow 0.6s ease-out;
+}
+.container-contact .container-contact-info-form .container-contact-info-form-btn button:hover {
+  border: 1px solid #08a6e4;
   box-shadow: 5px 10px 14px rgba(7, 172, 230, 0.29);
+  background-color: #fff;
+}
+.container-contact .container-contact-info-form .container-contact-info-form-btn button:hover p {
+  color: #08a6e4;
 }
 .container-contact .container-contact-info-form .container-contact-info-form-btn button p {
   text-decoration: none;
   color: #fff;
+  transition: color 0.4s ease-out;
 }
 .container-contact .container-contact-info-form .error-input input {
   border-color: #fb3b64;
@@ -955,6 +984,7 @@ body {
 }
 
 #container-footer-arrow-up {
+  z-index: 1;
   cursor: pointer;
   margin: auto;
   margin-bottom: 1.5rem;

@@ -40,6 +40,9 @@
       height: 1rem;
       background-color: variables.$color-grey;
       border-radius: 0.5rem;
+      &:hover {
+        background-color: variables.$color-white;
+      }
     }
     div.circle-selected {
       background-color: variables.$color-white;
@@ -52,6 +55,9 @@
     position: absolute;
     top: calc(50% - 1.6rem);
     left: 1rem;
+    &:hover {
+      color: variables.$color-white;
+    }
   }
   #right-arrow {
     cursor: pointer;
@@ -60,5 +66,8 @@
     position: absolute;
     top: calc(50% - 1.6rem);
     right: 1rem;
+    &:hover {
+      color: variables.$color-white;
+    }
   }
 }

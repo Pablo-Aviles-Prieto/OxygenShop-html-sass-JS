@@ -230,15 +230,26 @@ body {
     cursor: pointer;
     margin-bottom: 51px;
     background-color: variables.$color-cyan-blue;
-    box-shadow: variables.$shadow-blue;
-    border: 0px;
+    box-shadow: 0px 0px 0px 0px white;
+    border: 2px transparent;
     border-radius: 40px;
     width: 310px;
     height: 67px;
+    &:hover {
+      border: 1px solid variables.$color-cyan-blue;
+      box-shadow: variables.$shadow-blue;
+      background-color: variables.$color-white;
+      p {
+        color: variables.$color-cyan-blue;
+      }
+    }
     p {
       text-decoration: none;
       color: variables.$color-white;
+      transition: color 0.4s ease-out;
     }
+    transition: background-color 0.4s ease-in-out, border 0.4s ease-in,
+      box-shadow 0.6s ease-out;
   }
 }
 
@@ -461,13 +472,24 @@ body {
         width: 14rem;
         height: 3.5rem;
         background-color: variables.$color-cyan-blue;
-        border: 0px;
+        border: 2px transparent;
         border-radius: 40px;
-        box-shadow: variables.$shadow-blue;
+        box-shadow: 0px 0px 0px 0px white;
+        &:hover {
+          border: 1px solid variables.$color-cyan-blue;
+          box-shadow: variables.$shadow-blue;
+          background-color: variables.$color-white;
+          p {
+            color: variables.$color-cyan-blue;
+          }
+        }
         p {
           text-decoration: none;
           color: variables.$color-white;
+          transition: color 0.4s ease-out;
         }
+        transition: background-color 0.4s ease-in-out, border 0.4s ease-in,
+          box-shadow 0.6s ease-out;
       }
     }
     .error-input {
@@ -516,6 +538,7 @@ body {
 }
 
 #container-footer-arrow-up {
+  z-index: 1;
   cursor: pointer;
   margin: auto;
   margin-bottom: 1.5rem;
